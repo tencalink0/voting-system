@@ -12,3 +12,11 @@ docs/
 
 # Dotenv file
 .env
+
+
+# Added by cargo
+*/target
+
+
+/node_modules
+/lib

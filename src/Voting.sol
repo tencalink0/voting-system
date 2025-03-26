@@ -21,6 +21,7 @@ contract Voting {
         for (uint256 i = 0; i < _candidates.length; i++) {
             candidates.push(_candidates[i].addr);
             candidateAddr[_candidates[i].name] = _candidates[i].addr;
+            candidateName[_candidates[i].addr] = _candidates[i].name;
         }
         votingDeadline = block.timestamp + _votePeriod;
     }
