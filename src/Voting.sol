@@ -29,9 +29,10 @@ contract Voting {
     function vote(address _candidate) external {
         require(block.timestamp < votingDeadline, 'Voting has ended');
         require(bytes(candidateName[_candidate]).length > 0, 'Candidate does not exist');
-        require(voters[msg.sender] == true, 'Already voted');
+        require(voters[msg.sender] != true, 'Already voted');
 
         votes[_candidate] += 1;
+        voters[msg.sender] = true;
     }
 
     function getCandidateAddr(string calldata _name) external view returns (address) {
