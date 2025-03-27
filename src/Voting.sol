@@ -46,7 +46,7 @@ contract Voting {
 
         for (uint256 i = 0; i < candidates.length; i++) {
             uint256 currentVotes = votes[candidates[i]];
-            if (currentVotes > maxVotes && maxVotes > 0) {
+            if (currentVotes > maxVotes && currentVotes > 0) {
                 maxVotes = currentVotes;
                 winnerCount = 0;
                 tempWinners[winnerCount] = candidates[i];
@@ -61,6 +61,8 @@ contract Voting {
         for (uint256 i = 0; i < winnerCount; i++) {
             winners[i] = tempWinners[i];
         }
+
+        return (winners, maxVotes);
     }
 
     function callWinner() external {
