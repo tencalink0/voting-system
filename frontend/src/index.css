@@ -1,0 +1,46 @@
+:root {
+  --black: #242424;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--black);
+  color: white;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 54px;
+  text-align: center;
+}
+
+p {
+  font-size: 34px;
+}
+
+.vote-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+button.vote {
+  font-size: 20px;
+  width: 100%;
+  background: white;
+  border: 2px solid var(--black);
+  border-radius: 6px;
+  padding: 10px 0;
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease, margin 0.3s ease, transform 0.3s ease;
+  margin: 2% 0;
+}
+
+button.vote:hover {
+  background: var(--main2);
+  border: 2px solid white;
+  color: white;
+  transform: scale(1.5);
+  margin: 6% 0;
+}
