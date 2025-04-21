@@ -69,7 +69,6 @@ contract Voting {
         require(block.timestamp >= votingDeadline, "Voting hasn't ended yet");
         (address[] memory winners, ) = findWinners();
 
-        // TODO: convert addr to names
         emit VotingEnded(winners);
     }
 }
